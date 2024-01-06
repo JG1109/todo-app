@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+/* GENERAL */
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: #393e46;
+}
+
+/* TASK FORM */
+
+form {
+  border: 0.2rem solid #929aab;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+}
+
+form input[type="text"] {
+  background: none;
+  border: 0;
+  padding: 0 8px;
+  display: block;
+  width: 100%;
+}
+
+form button {
+  background-color: #929aab;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* TASKS */
+
+.task {
+  background-color: #929aab;
+  border-radius: 10px;
+  padding: 5px 9px;
+  margin-top: 5px;
+  display: flex;
+}
+
+.task svg {
+  margin-right: 4px;
+  margin-top: 4px;
+}

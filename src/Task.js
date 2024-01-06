@@ -1,10 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import Checkbox from "./Checkbox";
 
 function Task() {
   return (
-    <div>
-      <input type="checkbox" />
+    <div className="task">
+      <Checkbox defaultChecked={false} />
       Test task
     </div>
   );

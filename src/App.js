@@ -5,10 +5,10 @@ import Task from "./Task";
 
 function App() {
   return (
-    <div>
+    <main>
       <TaskForm />
       <Task />
-    </div>
+    </main>
   );
 }
 
