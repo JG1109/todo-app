@@ -22,6 +22,14 @@ function App() {
     });
   }
 
+  function removeTask(taskIndex) {
+    setTasks((prev) => {
+      return prev.filter((taskObj, index) => {
+        return index !== taskIndex;
+      });
+    });
+  }
+
   function updateTaskDone(taskIndex, newDone) {
     setTasks((prev) => {
       const newTasks = [...prev];
@@ -36,13 +44,21 @@ function App() {
       return "Try to do at least one 🥚";
     }
     if (percentage === 1) {
-      return 'Very nice job 🐤'
+      return "Very nice job 🐤";
     }
     return "Keep it going 🐣";
   }
 
   const numberComplete = tasks.filter((task) => task.done).length;
   const numberTotal = tasks.length;
+
+  function renameTask(index, name) {
+    setTasks((prev) => {
+      const newTasks = [...prev];
+      newTasks[index].name = name;
+      return newTasks;
+    });
+  }
 
   return (
     <main>
@@ -52,7 +68,12 @@ function App() {
       <h2>{getMessage(numberComplete, numberTotal)}</h2>
       <TaskForm onAdd={addTask} />
       {tasks.map((task, index) => (
-        <Task {...task} onToggle={(done) => updateTaskDone(index, done)} />
+        <Task
+          {...task}
+          onToggle={(done) => updateTaskDone(index, done)}
+          onTrash={() => removeTask(index)}
+          onRename={(newName) => renameTask(index, newName)}
+        />
       ))}
     </main>
   );

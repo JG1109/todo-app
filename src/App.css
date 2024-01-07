@@ -103,6 +103,11 @@ form button {
   position: relative;
 }
 
+.task-name,
+.task form {
+  flex-grow: 1;
+}
+
 .task span:before {
   content: "";
   display: block;
@@ -110,7 +115,7 @@ form button {
   height: 2px;
   background-color: #393e46;
   position: absolute;
-  top: 50%;
+  top: 55%;
   transition: width 0.2s linear;
 }
 
@@ -123,4 +128,26 @@ form button {
 h1,
 h2 {
   text-align: center;
+}
+
+/* TASK REMOVAL BUTTON */
+
+.trash {
+  background: none;
+  border: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.trash svg {
+  fill: #393e46;
+  height: 14px;
+}
+
+/* TASK NAME EDITOR */
+
+.task input {
+  border: 2px solid #393e46;
+  border-radius: 5px;
+  padding: 2px 4px;
 }
