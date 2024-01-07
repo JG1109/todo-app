@@ -30,8 +30,26 @@ function App() {
     });
   }
 
+  function getMessage(numberComplete, numberTotal) {
+    const percentage = numberComplete / numberTotal;
+    if (percentage === 0) {
+      return "Try to do at least one 🥚";
+    }
+    if (percentage === 1) {
+      return 'Very nice job 🐤'
+    }
+    return "Keep it going 🐣";
+  }
+
+  const numberComplete = tasks.filter((task) => task.done).length;
+  const numberTotal = tasks.length;
+
   return (
     <main>
+      <h1>
+        {numberComplete}/{numberTotal} Complete
+      </h1>
+      <h2>{getMessage(numberComplete, numberTotal)}</h2>
       <TaskForm onAdd={addTask} />
       {tasks.map((task, index) => (
         <Task {...task} onToggle={(done) => updateTaskDone(index, done)} />

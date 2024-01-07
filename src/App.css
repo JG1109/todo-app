@@ -117,3 +117,10 @@ form button {
 .task.done span:before {
   width: 100%;
 }
+
+/* HEADLINERS */
+
+h1,
+h2 {
+  text-align: center;
+}
