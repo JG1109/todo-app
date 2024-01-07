@@ -87,9 +87,33 @@ form button {
   padding: 5px 9px;
   margin-top: 5px;
   display: flex;
+  transition: opacity 0.3s linear;
 }
 
 .task svg {
   margin-right: 6px;
   margin-top: 4px;
+}
+
+.done {
+  opacity: 0.6;
+}
+
+.task span {
+  position: relative;
+}
+
+.task span:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #393e46;
+  position: absolute;
+  top: 50%;
+  transition: width 0.2s linear;
+}
+
+.task.done span:before {
+  width: 100%;
 }
