@@ -10,7 +10,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="./src/assets/demo.png" alt="project-screenshot" />
+<img src="./src/assets/demo-pic.png" alt="project-screenshot" />
 
   
   
