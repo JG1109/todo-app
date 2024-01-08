@@ -6,8 +6,12 @@ import Task from "./components/Task";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [isInit, setIsInit] = useState(true);
   useEffect(() => {
-    if (tasks.length === 0) return;
+    if (tasks.length === 0 && isInit) {
+      setIsInit(false);
+      return;
+    }
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
@@ -28,9 +32,7 @@ function App() {
 
   function removeTask(taskIndex) {
     setTasks((prev) => {
-      return prev.filter((taskObj, index) => {
-        return index !== taskIndex;
-      });
+      return prev.filter((_, index) => index !== taskIndex);
     });
   }
 
